@@ -1,0 +1,28 @@
+nav {
+  background-color: $taupe;
+  height: 48px;
+  .brand-logo {
+    position: absolute;
+    color: $jet;
+    display: inlinke-block;
+    font-size: 1.9rem;
+    white-space: nowrap;    
+  }
+  ul {
+    a{
+    transition: background-color .3s;
+    font-size: 1.2rem;
+    color: $vibe;
+    display:  block;
+    padding: 0 15px;
+    cursor: pointer;
+    }
+  }
+}
+
+.navbar-fixed {
+  position: relative;
+  height: 48px;
+  z-index: 997;
+}
+
