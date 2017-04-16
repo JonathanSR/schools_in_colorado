@@ -1,0 +1,18 @@
+<div>
+<h1>Colorado Graduation Rates</h1>
+</div>
+<div class-"container">
+<div class ="row">
+<div class="input-field col s6" id="search">
+    <%= form_tag :results, method: :get do%>
+    <%= text_field_tag :college, "Name" %>
+    <%= collection_select :program, :id, Program.all, :id, :name %>
+    <%= text_field_tag :degree, "Degree" %>
+    <%= text_field_tag :ethnicity, "Ethnicity" %>
+    <%= text_field_tag :year, "Year" %>
+    <%= submit_tag "Get Data"%>
+  <% end %>
+</div>
+</div>
+</div>
+
