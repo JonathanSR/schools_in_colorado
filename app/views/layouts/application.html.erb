@@ -12,18 +12,12 @@
   </head>
 
   <body>
-   <nav>
-   <div class="container">
-    <div class="nav-wrapper">
-      <%= link_to "Schools In Colorado", "/", class: "brand-logo" %>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    </div>
-  </div>
-  </nav>
+    <% if current_user %>
+      <%= render partial: "shared/user_nav"%>
+    <% else %>
+      <%=render partial: "shared/guest_nav"%>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>
