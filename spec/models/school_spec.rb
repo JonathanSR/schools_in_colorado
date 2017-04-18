@@ -8,7 +8,7 @@ describe School do
       school = schools[0]
       expect(schools.class).to eq(Array)
       expect(school.college).to be_truthy
-      expect(school.degree).to be_truthy
+      expect(school.program).to be_truthy
       expect(school.ethnicity).to be_truthy
       expect(school.year).to be_truthy
     end
@@ -35,7 +35,7 @@ describe School do
   context "finds all graduates across the college for the selected ethnicity" do
     it "returns a count of that query" do
 
-      graduates = School.find_all_ethnicity_graduates("Colorado State University", "2015", "Hispanic")
+      graduates = School.find_all_ethnicity_graduates("Colorado State University", "Hispanic", "2015")
 
       expect(graduates).to eq(247)
     end
@@ -55,7 +55,7 @@ describe School do
   context "finds the percentage of ethnicity graduates of a program against all programs for that ethnicity" do
     it "returns the percentage" do
       program_graduates = School.find_queried_graduates_count("Colorado State University", "14", "Hispanic", "2015")
-      all_graduates = School.find_all_ethnicity_graduates("Colorado State University", "2015", "Hispanic")
+      all_graduates = School.find_all_ethnicity_graduates("Colorado State University", "Hispanic", "2015")
       
       total = School.percentage_of_ethnicity_graduates_of_program_against_all_programs_for_that_ethnicity
 

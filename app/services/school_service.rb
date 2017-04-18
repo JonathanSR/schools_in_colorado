@@ -20,6 +20,11 @@ attr_reader :connection
   def self.find_all_ethnicity_graduates(college, ethnicity, year)
     response = Faraday.get("https://data.colorado.gov/resource/yt5k-hawq.json?year=#{year}&institutionname=#{college}&ethnicity=#{ethnicity}")
     final = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.get_data
+    response = Faraday.get("https://data.colorado.gov/resource/yt5k-hawq.json")
+    final = JSON.parse(response.body, symbolize_names: true)
   end    
 end
 

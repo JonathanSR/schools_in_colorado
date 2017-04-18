@@ -3,6 +3,7 @@ class Seed
   def self.start
     seed = Seed.new
     seed.create_programs
+    seed.create_years
   end
 
   def create_programs
@@ -54,6 +55,25 @@ class Seed
     Program.create(cip2:"53", name:"High School/Secondary Diplomas and Certificates")
     Program.create(cip2:"54", name:"History")
     Program.create(cip2:"60", name:"Residency Programs")
-  end    
+  end
+
+  def create_years
+    Year.create(date_year:"2001")
+    Year.create(date_year:"2002")
+    Year.create(date_year:"2003")
+    Year.create(date_year:"2004")
+    Year.create(date_year:"2005")
+    Year.create(date_year:"2006")
+    Year.create(date_year:"2007")
+    Year.create(date_year:"2008")
+    Year.create(date_year:"2009")
+    Year.create(date_year:"2010")
+    Year.create(date_year:"2011")
+    Year.create(date_year:"2012")
+    Year.create(date_year:"2013")
+    Year.create(date_year:"2014")
+    Year.create(date_year:"2015")
+    Year.create(date_year:"2016")
+  end
 end
 Seed.start
