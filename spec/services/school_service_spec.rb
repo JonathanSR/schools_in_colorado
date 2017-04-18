@@ -4,8 +4,7 @@ describe SchoolService do
   context "find by params" do
     it "returns an array of hashes with graduates queried info" do
       #service = SchoolService.new
-      graduates = SchoolService.find__ethnicity_program_graduates("Colorado State University", "14", "Hispanic", "2015")
-      #byebug
+      graduates = SchoolService.find_ethnicity_program_graduates("Colorado State University", "14", "Hispanic", "2015")
       graduate = graduates[0]
 
       expect(graduates.class).to eq(Array)
@@ -31,13 +30,23 @@ describe SchoolService do
 
   context "finds all ethnicity graduates" do
     it "returns all graduates for that school and ethnicity queried" do
-      graduates = SchoolService.find_all_ethnicity_graduates("Colorado State University", "2015", "Hispanic")
-   
+      graduates = SchoolService.find_all_ethnicity_graduates("Colorado State University", "Hispanic", "2015")
+
       graduate = graduates[0]
       expect(graduates.count).to eq(247)
       expect(graduate[:institutionname]).to be_truthy
       expect(graduate[:year]).to be_truthy
       expect(graduate[:ethnicity]).to be_truthy
+    end
+  end
+
+  context "it returns all available data" do
+    it "returns all available data" do
+      schools = SchoolService.get_data
+      school = schools[0]
+
+      expect(school[:institutionname]).to be_truthy
+
     end
   end
 end
