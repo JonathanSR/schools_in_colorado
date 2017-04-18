@@ -4,8 +4,8 @@ attr_reader :college,
             :ethnicity,
             :year,
             :all_graduates_of_program,
-            :ethnicity_graduates
-            :ethnicity_graduates_of_program 
+            :ethnicity_graduates,
+            :ethnicity_graduates_of_program
 
   def initialize(graduate_information)
     @college = graduate_information[:institutionname]
@@ -18,7 +18,6 @@ attr_reader :college,
     raw_information = SchoolService.find_ethnicity_program_graduates(college, program, ethnicity, year)
     raw_information.map do |graduate_information|
       School.new(graduate_information)
-      
     end
   end 
 
@@ -41,13 +40,12 @@ attr_reader :college,
   def self.percentage_of_ethnicity_graduates_for_that_program
       total = @ethnicity_graduates_of_program.to_f /
               @all_graduates_of_program.to_f
-      final = '%.2f' % total
+      program_final = '%.3f' % total
   end 
 
   def self.percentage_of_ethnicity_graduates_of_program_against_all_programs_for_that_ethnicity
        total = @ethnicity_graduates_of_program.to_f  /
                @ethnicity_graduates.to_f
-               
-      final = '%.2f' % total
+      institution_final = '%.3f' % total
   end
 end
