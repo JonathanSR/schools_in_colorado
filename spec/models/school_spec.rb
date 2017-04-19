@@ -3,7 +3,7 @@ require 'rails_helper'
 describe School do
   context "find graduates" do
     it "returns an array of school objects" do
-
+      
       schools = School.find_ethnicity_program_graduates("Colorado State University", "14", "Hispanic", "2015")
       school = schools[0]
       expect(schools.class).to eq(Array)
@@ -48,7 +48,7 @@ describe School do
       
       total = School.percentage_of_ethnicity_graduates_for_that_program
       
-      expect(total).to eq('0.07')
+      expect(total).to eq('0.071')
     end
   end
 
@@ -59,7 +59,7 @@ describe School do
       
       total = School.percentage_of_ethnicity_graduates_of_program_against_all_programs_for_that_ethnicity
 
-      expect(total).to eq('0.06')
+      expect(total).to eq('0.057')
     end
   end
- end      
+ end 

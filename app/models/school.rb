@@ -15,25 +15,25 @@ attr_reader :college,
   end
 
   def self.find_ethnicity_program_graduates(college, program, ethnicity, year)
-    raw_information = SchoolService.find_ethnicity_program_graduates(college, program, ethnicity, year)
+    raw_information = school_service.find_ethnicity_program_graduates(college, program, ethnicity, year)
     raw_information.map do |graduate_information|
       School.new(graduate_information)
     end
   end 
 
   def self.find_all_graduates_of_program(college, program, year)
-    raw_information = SchoolService.find_all_graduates_of_program(college, program, year)
+    raw_information = school_service.find_all_graduates_of_program(college, program, year)
     @all_graduates_of_program = raw_information.count
   end
 
   def self.find_queried_graduates_count(college, program, ethnicity, year)
-    raw_information = SchoolService.find_ethnicity_program_graduates(college, program, ethnicity, year)
+    raw_information = school_service.find_ethnicity_program_graduates(college, program, ethnicity, year)
     ethnicity_graduates = raw_information.count
     @ethnicity_graduates_of_program = ethnicity_graduates
   end
 
   def self.find_all_ethnicity_graduates(college, ethnicity, year)
-    raw_information = SchoolService.find_all_ethnicity_graduates(college, ethnicity, year)
+    raw_information = school_service.find_all_ethnicity_graduates(college, ethnicity, year)
     @ethnicity_graduates = raw_information.count
   end
 
@@ -47,5 +47,9 @@ attr_reader :college,
        total = @ethnicity_graduates_of_program.to_f  /
                @ethnicity_graduates.to_f
       institution_final = '%.3f' % total
+  end
+
+  def self.school_service
+    @service = SchoolService.new
   end
 end

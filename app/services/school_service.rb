@@ -1,42 +1,31 @@
 class SchoolService
 attr_reader :connection
 
-  # def initialize
-  #   @connection = Faraday.new("https://data.colorado.gov/resource/yt5k-hawq.json?$$app_token=#{ENV['SCHOOL_KEY']}")
-  #  @connection.headers[:Authorization] = "#{ENV["SCHOOL_KEY"]}"
-  #  byebug
-  # end
+  def initialize
+    @connection = Faraday.new("https://data.colorado.gov/resource/yt5k-hawq.json")
+  end
 
-  def self.find_ethnicity_program_graduates(college, program, ethnicity, year)
-    response = Faraday.get("https://data.colorado.gov/resource/yt5k-hawq.json?ethnicity=#{ethnicity}&year=#{year}&institutionname=#{college}&cip2=#{program}")
-    final = JSON.parse(response.body, symbolize_names: true)
+  def find_ethnicity_program_graduates(college, program, ethnicity, year)
+   parse(connection.get("?ethnicity=#{ethnicity}&year=#{year}&institutionname=#{college}&cip2=#{program}"))
+    
   end
  
-  def self.find_all_graduates_of_program(college, program, year)
-    response = Faraday.get("https://data.colorado.gov/resource/yt5k-hawq.json?year=#{year}&institutionname=#{college}&cip2=#{program}")
-    final = JSON.parse(response.body, symbolize_names: true)
+  def find_all_graduates_of_program(college, program, year)
+    parse(connection.get("?year=#{year}&institutionname=#{college}&cip2=#{program}"))
   end
 
-  def self.find_all_ethnicity_graduates(college, ethnicity, year)
-    response = Faraday.get("https://data.colorado.gov/resource/yt5k-hawq.json?year=#{year}&institutionname=#{college}&ethnicity=#{ethnicity}")
-    final = JSON.parse(response.body, symbolize_names: true)
+  def find_all_ethnicity_graduates(college, ethnicity, year)
+    parse(connection.get("?year=#{year}&institutionname=#{college}&ethnicity=#{ethnicity}"))
   end
 
-  def self.get_data
-    response = Faraday.get("https://data.colorado.gov/resource/yt5k-hawq.json")
-    final = JSON.parse(response.body, symbolize_names: true)
+  def get_data
+    Rails.cache.fetch("all_data") do
+      parse(connection.get("https://data.colorado.gov/resource/yt5k-hawq.json"))
+    end
   end    
+
+private
+  def parse(response)
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
-
-
-
-
-#   def self.find_by_search(college, program, ethnicity, year)
-#     byebug
-#     parse(connection.get("&ethnicity=#{ethnicity}&year=#{year}&institutionname=#{college}&cip2=#{program}"))
-#   end
-
-# private
-#   def parse(response)
-#     JSON.parse(response.body, symbolize_names: true)
-#   end

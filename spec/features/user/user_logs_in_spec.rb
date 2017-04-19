@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+ 
   xdescribe "user logs in" do
     scenario "using google oauth2" do
       stub_omniauth

@@ -1,13 +1,10 @@
 require 'rails_helper'
 
-  xdescribe "when user visits root" do
-    it "they see links to different services" do
-
+  describe "when user visits root" do
+    it "they see name of app" do
       visit '/'
 
-      expect(page).to have_content("Higher Ed Stats")
-      expect(page).to have_link("View All Colorado Colleges")
-      expect(page).to have_link("View Scholarships")
-      expect(page).to have_link("Sign in with Google")
+      expect(page).to have_content("Stats For College")
+      expect(page).to have_content("Sign in with Google")
     end
   end
