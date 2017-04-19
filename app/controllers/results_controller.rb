@@ -1,4 +1,6 @@
 class ResultsController <ApplicationController
+  before_action :authorize!
+  
 
   def index
     @schools = School.find_ethnicity_program_graduates(params[:college], params[:program], params[:ethnicity], params[:year])
@@ -14,4 +16,4 @@ class ResultsController <ApplicationController
     @program =Program.find_by(cip2:params[:program])
   end
 
-end
+end 

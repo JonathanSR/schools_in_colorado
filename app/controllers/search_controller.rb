@@ -1,4 +1,6 @@
 class SearchController < ApplicationController
+before_action :authorize!
+caches_action :show
 
   def show
     @programs = Program.all

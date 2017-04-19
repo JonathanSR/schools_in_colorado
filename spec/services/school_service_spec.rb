@@ -1,13 +1,20 @@
 require 'rails_helper'
 
 describe SchoolService do
-  context "find by params" do
-    it "returns an array of hashes with graduates queried info" do
-      #service = SchoolService.new
-      graduates = SchoolService.find_ethnicity_program_graduates("Colorado State University", "14", "Hispanic", "2015")
+  attr_reader :service
+
+  before(:each) do
+    @service = SchoolService.new
+  end
+
+
+  describe "main search" do
+    it "returns an array of hashes for the school, program, year, ethnicity queried" do
+      graduates = @service.find_ethnicity_program_graduates("Colorado State University", "14", "Hispanic", "2015")
       graduate = graduates[0]
 
       expect(graduates.class).to eq(Array)
+      expect(graduates.count).to eq(14)
       expect(graduate[:institutionname]).to be_truthy
       expect(graduate[:cip2]).to be_truthy
       expect(graduate[:ethnicity]).to be_truthy
@@ -15,9 +22,9 @@ describe SchoolService do
     end
   end
 
-  context "find all graduates" do
+  describe "graduates of program search" do
     it "returns all graduates for the school, program and year queried" do
-      graduates = SchoolService.find_all_graduates_of_program("Colorado State University", "14", "2015")   
+      graduates = @service.find_all_graduates_of_program("Colorado State University", "14", "2015")
       graduate = graduates[0]
       
       expect(graduates.class).to eq(Array)
@@ -28,9 +35,9 @@ describe SchoolService do
     end
   end
 
-  context "finds all ethnicity graduates" do
+  describe "all graduates of ethnicity for institution search" do
     it "returns all graduates for that school and ethnicity queried" do
-      graduates = SchoolService.find_all_ethnicity_graduates("Colorado State University", "Hispanic", "2015")
+      graduates = @service.find_all_ethnicity_graduates("Colorado State University", "Hispanic", "2015")
 
       graduate = graduates[0]
       expect(graduates.count).to eq(247)
@@ -40,13 +47,11 @@ describe SchoolService do
     end
   end
 
-  context "it returns all available data" do
+  describe "it returns all available data" do
     it "returns all available data" do
-      schools = SchoolService.get_data
+      schools = @service.get_data
       school = schools[0]
-
       expect(school[:institutionname]).to be_truthy
-
     end
   end
 end
