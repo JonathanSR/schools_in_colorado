@@ -22,6 +22,7 @@
       <%= select_tag 'program', options_from_collection_for_select(@programs, :cip2, :name, include_blank: true), class:"browser-default"%>
       <%= select_tag 'college', options_from_collection_for_select(@institutions,:name, :name, include_blank: true), class:"browser-default"%>
       <%= select_tag 'ethnicity', options_from_collection_for_select(@ethnicities,:ethnicity, :ethnicity, include_blank: true), class:"browser-default"%>
+      <p style="color: red;"><%=flash[:notice]%></p>
       <%= submit_tag "Get Results"%>
     <% end %>
     <% end %>

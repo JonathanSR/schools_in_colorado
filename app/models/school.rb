@@ -15,7 +15,7 @@ attr_reader :college,
   end
 
   def self.find_ethnicity_program_graduates(college, program, ethnicity, year)
-    raw_information = school_service.find_ethnicity_program_graduates(college, program, ethnicity, year)
+    raw_information = school_service.find_ethnicity_program_graduates(college, program, ethnicity, year) 
     raw_information.map do |graduate_information|
       School.new(graduate_information)
     end
