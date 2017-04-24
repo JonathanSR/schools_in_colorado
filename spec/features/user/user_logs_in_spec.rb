@@ -1,6 +1,6 @@
 require 'rails_helper'
  
-  xdescribe "user logs in" do
+  describe "user logs in" do
     scenario "using google oauth2" do
       stub_omniauth
       visit root_path
@@ -10,7 +10,7 @@ require 'rails_helper'
       click_link "Sign in with Google"
 
       expect(page).to have_content("Jonathan Serrano")
-      expect(page).to have_link("Logout")
+      expect(page).to have_link("Sign out")
     end
 
     def stub_omniauth
@@ -25,7 +25,7 @@ require 'rails_helper'
         },
         credentials: {
           token: "1234djdjd",
-          expires_at: Time.now,
+          expires_at: DateTime.now,
         }
     })
   end
