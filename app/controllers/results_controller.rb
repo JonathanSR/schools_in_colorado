@@ -1,6 +1,6 @@
 class ResultsController <ApplicationController
   before_action :authorize!
-  caches_action :show  
+  caches_action :show
   include ResultsHelper
 
   def index
