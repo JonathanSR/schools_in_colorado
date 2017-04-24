@@ -1,7 +1,7 @@
 class ResultsController <ApplicationController
   before_action :authorize!
   caches_action :show  
-
+ 
   def index
     @schools = School.find_ethnicity_program_graduates(params[:college], params[:program], params[:ethnicity], params[:year])
     @school = @schools.first

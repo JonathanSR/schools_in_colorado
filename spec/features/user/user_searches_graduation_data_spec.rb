@@ -9,7 +9,6 @@ xdescribe "user searches for graduation information" do
     select "14", from: "program"
     select "Colorado State University", from: "college"
     select "Hispanic", from: "ethnicity"
-     
     click_button "Get Results"
  
     expect(current_path).to eq("/results")
