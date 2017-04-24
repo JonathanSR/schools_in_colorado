@@ -16,15 +16,15 @@
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
             <span class="card-title">Results</span>
-              <p> School: <%=@school.college%><br>
-                  Program: <%=@program.name%><br>
-                  Ethnicity: <%=@school.ethnicity%><br>
-                  Graduation Year: <%=@school.year%><br>
+              <p> School: <%=school.college%><br>
+                  Program: <%=program.name%><br>
+                  Ethnicity: <%=school.ethnicity%><br>
+                  Graduation Year: <%=school.year%><br>
 
-                  Total <%=@school.ethnicity%> Graduates for <%=@program.name%>: <%=@selected_graduates%></br>
-                  Total Graduates for <%=@program.name%>: <%=@program_graduates%></br>
-                  Graduates of Program Against Program: <%=@program_total%></br>
-                  Graduates of Program Against all Graduates: <%=@institution_total%>
+                  Total <%=school.ethnicity%> Graduates for <%=program.name%>: <%=selected_graduates%></br>
+                  Total Graduates for <%=program.name%>: <%=program_graduates%></br>
+                  Graduates of Program Against Program: <%=program_total%></br>
+                  Graduates of Program Against all Graduates: <%=institution_total%>
               </p>
             </div>
             <div class="card-action">
@@ -36,3 +36,4 @@
     </div>
   </div>
 </div>
+ 
