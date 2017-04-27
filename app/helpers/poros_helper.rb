@@ -5,7 +5,7 @@ module PorosHelper
   end
 
   def institutions
-    Institution.all_institutions
+    Institution.all
   end
 
   def ethnicities

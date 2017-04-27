@@ -4,6 +4,7 @@ class Seed
     seed = Seed.new
     seed.create_programs
     seed.create_years
+    seed.create_institutions
   end
 
   def create_programs
@@ -74,6 +75,37 @@ class Seed
     Year.create(date_year:"2014")
     Year.create(date_year:"2015")
     Year.create(date_year:"2016")
+  end
+
+  def create_institutions
+    Institution.create(name:"Aims Community College", city:"Fort Lupton", street:"260 College Ave", state:"CO")
+    Institution.create(name:"Front Range Community College", city:"Westminster", street:"3645 W 112th Ave", state:"CO")
+    Institution.create(name:"University of Colorado Denver", city:"Denver", street:"1250 14th St, Denver", state:"CO")
+    Institution.create(name:"Metropolitan State University of Denver", city:"Denver", street:"890 Auraria Pkwy #410", state:"CO")
+    Institution.create(name:"Colorado Northwestern Community College", city:"Craig", street:"2801 W 9th St", state:"CO")
+    Institution.create(name:"University of Colorado Colorado Springs", city:"Colorado Springs", street:"1420 Austin Bluffs Pkwy", state:"CO")
+    Institution.create(name:"Western State Colorado University", city:"Gunnison", street:"600 Adams St", state:"CO")
+    Institution.create(name:"Community College of Aurora", city:"Denver", street:"710 Alton Way", state:"CO")
+    Institution.create(name:"CSU-Global Campus", city:"Greenwood Village", street:"7800 E Orchard Rd #200", state:"CO")
+    Institution.create(name:"Colorado State University", city:"Fort Collins", street:"1101 Center Ave Mall", state:"CO")
+    Institution.create(name:"Colorado School of Mines", city:"Golden", street:"1500 Illinois St", state:"CO")
+    Institution.create(name:"Arapahoe Community College", city:"Littleton", street:"5900 S Santa Fe Dr", state:"CO")
+    Institution.create(name:"Trinidad State Junior College", city:"Trinidad", street:"600 Prospect St", state:"CO")
+    Institution.create(name:"Colorado Mesa University", city:"Grand Junction", street:"1100 North Ave", state:"CO")
+    Institution.create(name:"Red Rocks Community College", city:"Lakewood", street:"13300 6th Avenue", state:"CO")
+    Institution.create(name:"Morgan Community College", city:"Fort Morgan", street:"920 Barlow Rd", state:"CO")
+    Institution.create(name:"Fort Lewis College", city:"Durango", street:"1000 Rim Dr", state:"CO")
+    Institution.create(name:"University of Colorado Boulder", city:"Boulder", street:"1669 Euclid Ave", state:"CO")
+    Institution.create(name:"Pikes Peak Community College", city:"Colorado Springs", street:"5675 S Academy Blvd,", state:"CO")
+    Institution.create(name:"Colorado Mountain College", city:"Glenwood Springs", street:"802 Grand Ave", state:"CO")
+    Institution.create(name:"University of Northern Colorado", city:"Greeley", street:"501 20th St", state:"CO")
+    Institution.create(name:"Colorado State University - Pueblo", city:"Pueblo", street:"2200 Bonforte Boulevard", state:"CO")
+    Institution.create(name:"Adams State University", city:"Alamosa", street:"208 Edgemont Blvd", state:"CO")
+    Institution.create(name:"Pueblo Community College", city:"Pueblo", street:"900 W Orman Ave", state:"CO")
+    Institution.create(name:"Community College of Denver", city:"Denver", street:"800 Curtis Street", state:"CO")
+    Institution.create(name:"Northeastern Junior College", city:"Sterling", street:"100 College Ave", state:"CO")
+    Institution.create(name:"Otero Junior College", city:"La Junta", street:"1802 Colorado Ave", state:"CO")
+    Institution.create(name:"Lamar Community College", city:"Lamar", street:"2401 S Main St", state:"CO")
   end
 end
 Seed.start

@@ -37,4 +37,7 @@ module ResultsHelper
     Program.find_by(cip2:params[:program]) 
   end
 
+  def institution
+    Institution.find_by(name:params[:college])
+  end
 end

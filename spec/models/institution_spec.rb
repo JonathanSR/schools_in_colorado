@@ -14,7 +14,7 @@ describe Institution do
   it 'returns unique insitution names' do
     schools = Institution.all_institutions
     school = schools[0]
-
+    byebug
     expect(schools.count).to eq(28)
     expect(school.name).to eq("Aims Community College")
     
