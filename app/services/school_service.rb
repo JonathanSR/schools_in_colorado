@@ -24,7 +24,7 @@ attr_reader :connection
     Rails.cache.fetch("all_data") do
       parse(connection.get("https://data.colorado.gov/resource/yt5k-hawq.json"))
     end
-  end    
+  end
 
 private
   def parse(response)
