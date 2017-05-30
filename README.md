@@ -1,24 +1,36 @@
-# README
+# Service For Dreamers
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Service for Dreamers is a Rails app that provides graduation data from post-secondary institutions in Colorado.
+You can use the live site at http://service-for-dreamers.herokuapp.com/
 
-Things you may want to cover:
+## Installing / Getting Started
 
-* Ruby version
+```shell
+git clone git@github.com:JonathanSR/schools_in_colorado.git #clones the application into your machine.
+cd schools_in_colorado/ #accesses the root folder of the application.
+bundle #installs all dependencies need to run the application.
+rake db:create #creates the database
+rake db:migrate #runs migrations that make changes to the database
+rake db:seed #seeds the database
+```
 
-* System dependencies
+## Usage
 
-* Configuration
+To run the tests:
+```shell
+rspec
+```
 
-* Database creation
+To run the server(runs on port 3000):
+```shell
+rails s
+```
 
-* Database initialization
+To access the database:
+```shell
+rails c
+```
 
-* How to run the test suite
+## Third_Party APIs
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Service for Dreamers uses the Colorado Marketplace API(https://data.colorado.gov/) to get the graduation data.
