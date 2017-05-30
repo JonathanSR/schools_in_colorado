@@ -8,10 +8,10 @@ You can use the live site at http://service-for-dreamers.herokuapp.com/
 ```shell
 git clone git@github.com:JonathanSR/schools_in_colorado.git #clones the application into your machine.
 cd schools_in_colorado/ #accesses the root folder of the application.
-bundle #installs all dependencies need to run the application.
-rake db:create #creates the database
-rake db:migrate #runs migrations that make changes to the database
-rake db:seed #seeds the database
+bundle #installs all dependencies needed to run the application.
+rake db:create #creates the database.
+rake db:migrate #runs migrations that make changes to the database.
+rake db:seed #seeds the database.
 ```
 
 ## Usage
