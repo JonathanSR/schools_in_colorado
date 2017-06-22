@@ -8,12 +8,12 @@ class Seed
   end
 
   def create_programs
-    Program.create(cip2:"01", name:"Agriculture, Agriculture Operations, and Related Sciences")
-    Program.create(cip2:"02", name: "Agricultural Sciences")
-    Program.create(cip2:"03", name:"Natural Resources and Conservation")
-    Program.create(cip2:"04", name: "Architecture and Related Services")
-    Program.create(cip2:"05", name:"Area, Ethnic, Cultural, Gender, and Group Studies")
-    Program.create(cip2:"09", name:"Communication, Journalism, and Related Programs")
+    Program.create(cip2:"1", name:"Agriculture, Agriculture Operations, and Related Sciences")
+    Program.create(cip2:"2", name: "Agricultural Sciences")
+    Program.create(cip2:"3", name:"Natural Resources and Conservation")
+    Program.create(cip2:"4", name: "Architecture and Related Services")
+    Program.create(cip2:"5", name:"Area, Ethnic, Cultural, Gender, and Group Studies")
+    Program.create(cip2:"9", name:"Communication, Journalism, and Related Programs")
     Program.create(cip2:"10", name:"Communications Technologies/Technicians and Support Services")
     Program.create(cip2:"11", name:"Computer and Information Sciences and Support Services")
     Program.create(cip2:"12", name:"Personal and Culinary Services")
@@ -56,6 +56,7 @@ class Seed
     Program.create(cip2:"53", name:"High School/Secondary Diplomas and Certificates")
     Program.create(cip2:"54", name:"History")
     Program.create(cip2:"60", name:"Residency Programs")
+    Program.create(cip2:"20", name:"Family and Consumer Sciences/Human Sciences")
   end
 
   def create_years

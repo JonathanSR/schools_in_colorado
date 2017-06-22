@@ -9,4 +9,11 @@ Rails.application.routes.draw do
   root "welcome#show"
   get '/search', to: "search#show" 
   get '/results', to: 'results#index'
+
+  namespace :api do
+    namespace :v1 do
+      resources :programs, only: [:show, :index]
+    end
+  end
 end  
+
