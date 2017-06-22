@@ -1,4 +1,26 @@
-form {
-  background-color: $taupe;
+.search{
+  #search-header{
+    text-align: center;
+    color: $text-color;
+    font: {
+      family: $header-font;
+    }
+  }
 
+  .card-panel{
+    background-color: $alt-3-color;
+    color: $text-color;
+    font: {
+      family: $card-font;
+      size: 17px;
+      weight: 500;
+    }
+    ul li{
+      list-style-type: cricle; 
+    }
+  }
+}
+
+.form {
+  padding-bottom: 100px;
 }

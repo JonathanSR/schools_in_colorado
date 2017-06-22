@@ -1,0 +1,44 @@
+.results-header{
+  .card-panel{
+  background-color: $alt-3-color;
+  color: $text-color;
+  font: {
+    family: $card-font;
+    size: 17px;
+    weight: 500px;
+  }
+  }
+}
+
+#results {
+  color: $alt-2-color;
+  font: {
+    family: $card-font;
+    weight: 500px;
+    size: 17px;
+  }
+  .results{
+    text-align: center;
+    font-family: $card-font;
+  }
+}
+
+.results-header{
+  font: { 
+    family: $header-font;
+    weight: 700px;
+  }
+  color: $text-color;
+  #results-college{
+    text-align: center;
+  }
+}
+
+.results-year-ethnicity{
+  #results-year {
+    float:right;
+  }
+  #results-ethnicity{
+    float:left;
+  }
+}
