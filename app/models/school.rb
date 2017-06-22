@@ -12,6 +12,7 @@ attr_reader :college,
     @program = graduate_information[:cip2]
     @ethnicity = graduate_information[:ethnicity]
     @year = graduate_information[:year]
+    byebug
   end
 
   def self.find_ethnicity_program_graduates(college, program, ethnicity, year)

@@ -1,3 +1,36 @@
+
+/* Fun Colors */
+$green: #55d6be;
+$light-green: #acfcd9;
+$purple: #7d5ba6;
+$taupe: #dddddd;
+$pinky:#fc6471;
+$jet: #3a3335;
+$ghost-white: #fcf7ff;
+$storm-cloud: #506c64;
+$dark-slate: #28536b;
+$jet: #3a3335;
+$vibe: #3e5dc2;
+
+/* Primary Color Scheme */
+$background-color: #d1e3dd;
+$alt-background-color: #fcf7f8;
+$nav-color: #6096ba;
+$text-color: #50514f;
+$alt-1-color: #b3d8db;
+$alt-2-color: #e7ecef;
+$alt-3-color: #ccd5e5;
+$alt-nav-color: #2d5d78;
+$footer-color: #424c55;
+
+
+/*Fonts */
+$nav-font: 'Poppins', sans-serif; 
+$card-font: 'Noticia Text', serif;
+$header-font: 'Lato', sans-serif;
+
+
+/* Whole Document Styling */
 body {
-  background-color: lighten($light-green, 15%);
-}
+  background-color: $alt-background-color;
+} 
