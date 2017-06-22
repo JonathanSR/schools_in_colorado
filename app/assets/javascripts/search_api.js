@@ -3,6 +3,7 @@ const host = "https://data.colorado.gov/resource/yt5k-hawq.json"
 $(document).ready(function(){
   newYear();
   newProgram();
+  newEthnicity();
 });
 
 function newYear(){
@@ -13,9 +14,8 @@ function newYear(){
 };
 
 var getInstitution = function(year){
-  var apiYear = year
   return $.ajax({
-    url: host + '?year=' + apiYear,
+    url: host + '?year=' + year,
     method: 'GET'
   })
   .done(schools)
@@ -41,10 +41,8 @@ function newProgram(){
 };
 
 var getPrograms = function(year, college){
-  var apiYear = year
-  var apiCollege = college 
   return $.ajax({
-    url: host + '?year=' + apiYear + '&institutionname=' + apiCollege,
+    url: host + '?year=' + year + '&institutionname=' + college,
     method: 'GET'
   })
   .done(programs)
@@ -81,4 +79,30 @@ var databasePrograms = function(databaseProgramsData){
   $("#program").append(new Option(newProgram, newProgramCip2))
 };
 
+function newEthnicity(){
+  $("#program").on('change', function(){
+    var year = $("#year").val();
+    var college = $("#college").val();
+    var program = $("#program").val();
+    getEthnicity(year, college, program)
+  });
+};
 
+var getEthnicity = function(year, college, program){
+  return $.ajax({
+    url: host + '?year=' + year + '&institutionname=' + college + '&cip2=' + program,
+    method: 'GET'
+  })
+  .done(ethnicities)
+  .fail(function(error){
+    console.log(error)
+  });
+};
+
+var ethnicities = function(ethnicitiesData){
+  var singleEthnicityData = _.uniqBy(ethnicitiesData, 'ethnicity');
+  for(var i = 0; i < singleEthnicityData.length; i++){
+    ethnicity = (singleEthnicityData[i].ethnicity)
+    $('#ethnicity').append(new Option(ethnicity))
+  };
+};

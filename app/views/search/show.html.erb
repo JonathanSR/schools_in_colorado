@@ -23,7 +23,7 @@
       <%= select_tag 'year', options_from_collection_for_select(years, :date_year, :date_year), prompt: "Select Year", class:"browser-default"%>
       <%= select_tag 'college', options_for_select([]), prompt: "Select Institution", class:"browser-default"%>
       <%= select_tag 'program', options_for_select([]), prompt: "Select Program", class:"browser-default"%>
-      <%= select_tag 'ethnicity', options_from_collection_for_select(ethnicities,:ethnicity, :ethnicity), prompt: "Select Ethnicity", class:"browser-default"%>
+      <%= select_tag 'ethnicity', options_for_select([]), prompt: "Select Ethnicity", class:"browser-default"%>
       <%= submit_tag "Get Results"%>
     <% end %>
   </div>
