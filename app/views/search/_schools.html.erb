@@ -16,13 +16,12 @@
   </div>
   </div>
   <div class="form">
-  <%= form_tag :results, method: :get do %>
-      <%= select_tag 'year', options_from_collection_for_select(years, :date_year, :date_year), prompt: "Select Year", class:"browser-default"%>
-      <%= select_tag 'college', options_for_select([]), prompt: "Select Institution", class:"browser-default"%>
-      <%= select_tag 'program', options_for_select([]), prompt: "Select Program", class:"browser-default"%>
-      <%= select_tag 'ethnicity', options_from_collection_for_select(ethnicities,:ethnicity, :ethnicity), prompt: "Select Ethnicity", class:"browser-default"%>
+  <%= form_tag :results, method: :get do%>
+      <%= select_tag 'year', options_from_collection_for_select(years, :date_year, :date_year, include_blank: true), class:"browser-default"%>
+      <%= select_tag 'college', options_from_collection_for_select(institutions,:name, :name, include_blank: true), class:"browser-default"%>
+      <%= select_tag 'program', options_from_collection_for_select(programs, :cip2, :name, include_blank: true), class:"browser-default"%>
+      <%= select_tag 'ethnicity', options_from_collection_for_select(ethnicities,:ethnicity, :ethnicity, include_blank: true), class:"browser-default"%>
       <%= submit_tag "Get Results"%>
     <% end %>
   </div>
 </div>
- 
