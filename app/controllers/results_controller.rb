@@ -4,6 +4,7 @@ class ResultsController <ApplicationController
 
   def index
     gon.institution = Institution.find_by(name:params[:college])
+    @college = Institution.find_by(name:params[:college])
   end
 end 
 
