@@ -1,13 +1,12 @@
 require 'rails_helper'
 
-describe "user searches for graduation information" do
+xdescribe "user searches for graduation information", :type => :feature, :js => true do
   it "user gets graduation data" do
     VCR.use_cassette('/user/user_searches') do
     mock_auth_hash
 
     visit root_path
     click_link "Sign in with Google"
-
     select "2015", from: "year"
     select "Engineering", from: "program"
     select "Colorado State University", from: "college"

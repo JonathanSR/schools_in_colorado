@@ -17,10 +17,6 @@
     weight: 500px;
     size: 17px;
   }
-  .results{
-    text-align: center;
-    font-family: $card-font;
-  }
 }
 
 .results-header{
@@ -41,4 +37,16 @@
   #results-ethnicity{
     float:left;
   }
+}
+
+.results{
+  text-align: center;
+  font: {
+    family: $card-font;
+  }
+    color: $alt-2-color;
+}
+
+a {
+      color: $alt-2-color;
 }

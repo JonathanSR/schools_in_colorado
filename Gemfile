@@ -55,6 +55,8 @@ group :development, :test do
   gem 'webmock'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'selenium-webdriver', '~> 2.53.4'
+
 end
 
 group :development do
