@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20170708225452) do
     t.string  "year"
     t.string  "percentage_one"
     t.string  "percentage_two"
+    t.string  "program"
     t.integer "user_id"
     t.index ["user_id"], name: "index_user_searches_on_user_id", using: :btree
   end
