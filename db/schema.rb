@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170623195034) do
+ActiveRecord::Schema.define(version: 20170708225452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,18 @@ ActiveRecord::Schema.define(version: 20170623195034) do
     t.string "name"
   end
 
+  create_table "user_searches", force: :cascade do |t|
+    t.string  "school"
+    t.string  "ethnicity"
+    t.string  "program_grads"
+    t.string  "ethnicity_grads"
+    t.string  "year"
+    t.string  "percentage_one"
+    t.string  "percentage_two"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_user_searches_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "provider"
     t.string   "uid"
@@ -46,4 +58,5 @@ ActiveRecord::Schema.define(version: 20170623195034) do
     t.string "date_year"
   end
 
+  add_foreign_key "user_searches", "users"
 end
