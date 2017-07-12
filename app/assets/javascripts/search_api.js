@@ -16,7 +16,10 @@ function newYear(){
 var getInstitution = function(year){
   return $.ajax({
     url: host + '?year=' + year,
-    method: 'GET'
+    method: 'GET',
+    data: {
+      "$$app_token" : $('body').data('env')
+    }
   })
   .done(schools)
   .fail(function(error){
@@ -43,7 +46,10 @@ function newProgram(){
 var getPrograms = function(year, college){
   return $.ajax({
     url: host + '?year=' + year + '&institutionname=' + college,
-    method: 'GET'
+    method: 'GET',
+    data: {
+      "$$app_token" : ($('body').data('env'))
+    }
   })
   .done(programs)
   .fail(function(error){
@@ -91,7 +97,10 @@ function newEthnicity(){
 var getEthnicity = function(year, college, program){
   return $.ajax({
     url: host + '?year=' + year + '&institutionname=' + college + '&cip2=' + program,
-    method: 'GET'
+    method: 'GET',
+    data: {
+      "$$app_token" : ($('body').data('env'))
+    }
   })
   .done(ethnicities)
   .fail(function(error){
