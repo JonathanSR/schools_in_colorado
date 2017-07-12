@@ -5,6 +5,7 @@ attr_reader :connection
     @connection = Faraday.new("https://data.colorado.gov/resource/yt5k-hawq.json") do |c|
       c.use Faraday::Response::RaiseError
       c.use Faraday::Adapter::NetHttp
+      c.headers[:app_token] = ENV['SCHOOL_KEY']
     end
   end
 
