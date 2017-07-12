@@ -7,24 +7,23 @@
 <div class = "container">
   <div class="row">
       <div class="col s12 m12">
-        <div class="row">
           <div class="card blue-grey lighten-1" id="results">
             <div class="card-content">
-              <span class="card-title results"><%=program.name%></span>
+              <span class="card-title results-program" id=><%=program.name%></span>
                 <div class = "results-year-ethnicity">
-                    <div id ="results-year">GRADUATION YEAR: <%=school.year%></div>
-                    <div id ="results-ethnicity">ETHNICITY: <%=school.ethnicity%></div>
+                    <div id ="results-year-tag">GRADUATION YEAR:<span id='results-year'> <%=school.year%></span></div>
+                    <div id ="results-ethnicity-tag">ETHNICITY:<span id="results-ethnicity"> <%=school.ethnicity%></span></div>
                 </div><br>
-                    Total program graduates: <%=program_graduates%></br>
-                    Total <%=school.ethnicity%> graduates: <%=selected_graduates%></br>
-                    Overall representation of <%=school.ethnicity%> graduates from the program: <%=program_total%></br>
-                    Overall graduates of <%=school.ethnicity%>'s' at this Institution whom graduated from this program: <%= institution_total %> 
+                    <div id = "results-holder">Total program graduates: <span id="program-grads"><%=program_graduates%></span></div>
+                    <div id = "results-holder">Total <%=school.ethnicity%> graduates: <span id="ethnicity-grads"><%=selected_graduates%></span></div>
+                    <div id = "results-holder">Overall representation of <%=school.ethnicity%> graduates from the program:<span id="percentage-one"> <%=program_total%></span></div>
+                    <div id = "results-holder">Overall graduates of <%=school.ethnicity%>'s at this Institution whom graduated from this program:<span id="percentage-two"> <%= institution_total %></span></div>
                 </p>
             </div>
             <div class="card-action search-again">
               <a href="/search">Search Again</a>
+              <a href="" id="save-search">Save Search</a>
             </div>
-          </div>
         </div>
       </div>
 

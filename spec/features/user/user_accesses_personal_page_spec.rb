@@ -1,18 +1,20 @@
 require 'rails_helper'
- 
-  describe "user logs in" do
-    scenario "using google oauth2" do
+
+  describe "user visits root page" do
+    context "it clicks profile button" do
+      it "is taken to profile page" do
       mock_auth_hash
       visit root_path
-
-      expect(page).to have_link("Sign in with Google")
-
       click_link "Sign in with Google"
 
-      expect(page).to have_content("Jonathan Serrano")
-      expect(page).to have_link("Sign out")
-    end
+      expect(page).to have_link("Jonathan Serrano")
+      click_link "Jonathan Serrano"
 
+      expect(page).to have_content("Jonathan Serrano")
+      expect(page).to have_content("Saved Searches")
+      expect(page).to have_content("Saved Schools")
+    end
+    
   def mock_auth_hash
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:google] = OmniAuth::AuthHash.new({
@@ -28,3 +30,4 @@ require 'rails_helper'
     })
     end
   end
+end

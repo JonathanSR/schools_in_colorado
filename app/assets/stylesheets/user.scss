@@ -1,0 +1,46 @@
+.user-header{
+  font: {
+    family: $header-font;
+    weight:700px;
+  }
+  color: $text-color;
+  #welcome-user{
+    text-align: center;
+  }
+  margin-top:50px;
+}
+
+.saved-searches{ 
+  font: {
+    family: $header-font;
+    weight:700px;
+  }
+  color: $text-color;
+  #saved-searches-header{
+    text-align: center;
+  }
+  margin-top:100px;
+}
+
+#saves{
+  color: $alt-2-color;
+  font: {
+    family: $card-font;
+    weight: 500px;
+    size: 17px;
+  }
+  .save-school{
+    text-align: center;
+    margin-bottom:22px;
+  }
+}
+
+.saves-program-year{
+   #saves-program{
+    float:left;
+  }
+  #saves-year{
+    float:right
+  }
+  margin-bottom:18px;
+}

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xdescribe "user searches for graduation information", :type => :feature, :js => true do
+describe "user searches for graduation information", :type => :feature, :js => true do
   it "user gets graduation data" do
     VCR.use_cassette('/user/user_searches') do
     mock_auth_hash

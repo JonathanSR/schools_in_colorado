@@ -31,15 +31,15 @@
 }
 
 .results-year-ethnicity{
-  #results-year {
+  #results-year-tag{
     float:right;
   }
-  #results-ethnicity{
+  #results-ethnicity-tag{
     float:left;
   }
 }
 
-.results{
+.results-program{
   text-align: center;
   font: {
     family: $card-font;
