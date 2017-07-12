@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20170708225452) do
     t.string "name"
   end
 
-  create_table "user_searches", force: :cascade do |t|
+  create_table "saves", force: :cascade do |t|
     t.string  "school"
     t.string  "ethnicity"
     t.string  "program_grads"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20170708225452) do
     t.string  "percentage_two"
     t.string  "program"
     t.integer "user_id"
-    t.index ["user_id"], name: "index_user_searches_on_user_id", using: :btree
+    t.index ["user_id"], name: "index_saves_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,5 +59,5 @@ ActiveRecord::Schema.define(version: 20170708225452) do
     t.string "date_year"
   end
 
-  add_foreign_key "user_searches", "users"
+  add_foreign_key "saves", "users"
 end

@@ -16,5 +16,11 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show]
+
+  namespace :api do
+    namespace :v1 do
+      resources :saves, only: [:create]
+    end
+  end
 end  
 
