@@ -1,31 +1,30 @@
 <div class="container user-header">
-  <h5 id="welcome-user">Welcome To your Profile <%=@current_user.name%></h5>
+  <h5 id="welcome-user">Welcome To Your Profile <%=@current_user.name%></h5>
 </div>
 
 <div class= "container saved-searches">
   <h5 id='saved-searches-header'>Saved Searches</h5>
+  <div class="row">
+  <%current_user.saves.each do |save|%>
+    <div class="col s12 m12">
+      <div class="card blue-grey lighten-1" id="saves">
+        <div class="card-content">
+        <span class="card-title save-school"><%=save.school%></span>
+          <div class = "saves-program-year">
+            <div id ="saves-program">PROGRAM: <%=save.program%></div>
+            <div id ="saves-year">YEAR: <%=save.year%></div>
+          </div><br>
+          Total program graduates: <%=save.program_grads%></br>
+          Total <%=save.ethnicity%> graduates: <%=save.ethnicity_grads%></br>
+          Overall representation of <%=save.ethnicity%> graduates from the program: <%=save.percentage_one%></br>
+          Overall graduates of <%=save.ethnicity%>'s at this Institution whom graduated from this program: <%= save.percentage_two %> 
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <div class= "container saved-searches">
   <h5 id="saved-searches-header">Saved Schools</h5>
 </div>
-
-<% if false %>
-<div class="row">
-  <div class="col s12 m12">
-    <div class="card blue-grey lighten-1" id="results">
-      <div class="card-content">
-      <span class="card-title results"><%=program.name%></span>
-        <div class = "results-year-ethnicity">
-          <div id ="results-year">GRADUATION YEAR: <%=school.year%></div>
-          <div id ="results-ethnicity">ETHNICITY: <%=school.ethnicity%></div>
-        </div><br>
-        Total program graduates: <%=program_graduates%></br>
-        Total <%=school.ethnicity%> graduates: <%=selected_graduates%></br>
-        Overall representation of <%=school.ethnicity%> graduates from the program: <%=program_total%></br>
-        Overall graduates of <%=school.ethnicity%>'s' at this Institution whom graduated from this program: <%= institution_total %> 
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>
