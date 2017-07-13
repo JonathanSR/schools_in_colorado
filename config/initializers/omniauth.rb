@@ -9,5 +9,5 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     :image_aspect_ration => 'square',
     :image_size => 50,
     :access_type => 'offline'
-  }
+  } 
 end
