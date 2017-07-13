@@ -1,11 +1,11 @@
 $(document).ready(function(){
   newSearchSave();
+  removeSearch();
 });
 
 function newSearchSave(){
   $("#save-search").on('click', function(event){
     event.preventDefault();
-    // alert("Search has been Saved");
     var school = $('#results-college').text();
     var ethnicity = $('#results-ethnicity').text();
     var year = $('#results-year').text();
@@ -30,3 +30,15 @@ var AddSearchSave = function(school, ethnicity, year, programGrads, ethnicityGra
     console.log(error)
   })
 }
+
+function removeSearch(){
+  $("#remove-search").on('click',function(event){
+    event.preventDefault();
+    var id = $('#save-id').val();
+    return $.ajax({
+      url: '/api/v1/saves/' + id,
+      method: 'DELETE',
+      data: id
+    })
+  });
+};

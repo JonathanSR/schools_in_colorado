@@ -13,8 +13,7 @@ require 'rails_helper'
         expect(page).to have_content("hispanic")
         expect(page).to have_content("2016")
 
-        click_on("remove search")
-
+        click_on("Remove Search")
         expect(page).to_not have_content("CSU")
         expect(page).to_not have_content("hispanic")
         expect(page).to_not have_content("2016")
