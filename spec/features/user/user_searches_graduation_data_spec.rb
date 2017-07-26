@@ -8,11 +8,12 @@ describe "user searches for graduation information", :type => :feature, :js => t
     visit root_path
     click_link "Sign in with Google"
     select "2015", from: "year"
+    byebug
     select "Engineering", from: "program"
     select "Colorado State University", from: "college"
     select "Hispanic", from: "ethnicity"
     click_button "Get Results"
- 
+  
     expect(current_path).to eq("/results")
     expect(page).to have_content("Results")
     expect(page).to have_content("Colorado State University")
