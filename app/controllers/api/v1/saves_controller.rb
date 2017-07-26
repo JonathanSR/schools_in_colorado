@@ -11,11 +11,8 @@ class Api::V1::SavesController < ApplicationController
   end
 
   def destroy
-   if Safe.delete(params[:id])
-      render json: 204
-    else 
-      render json: 404
-    end
+    Safe.delete(params[:id])
+    render json: 204
   end
 
   private
