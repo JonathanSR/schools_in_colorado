@@ -1,5 +1,5 @@
 class Api::V1::SavesController < ApplicationController
-  skip_before_filter :verify_authenticity_token, only:[:create]
+  skip_before_filter :verify_authenticity_token, only:[:create, :destroy]
   
   def create
     @new_search = current_user.saves.new(save_params)
@@ -8,6 +8,11 @@ class Api::V1::SavesController < ApplicationController
     else
       render json: 404
     end
+  end
+
+  def destroy
+    Safe.delete(params[:id])
+    render json: 204
   end
 
   private
