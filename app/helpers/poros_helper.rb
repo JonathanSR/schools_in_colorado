@@ -14,5 +14,6 @@ module PorosHelper
 
   def years
     Year.all
+    # byebug
   end
 end
