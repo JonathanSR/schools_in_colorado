@@ -6,6 +6,7 @@ $(document).ready(function(){
 function newSearchSave(){
   $("#save-search").on('click', function(event){
     event.preventDefault();
+    alert("Your Search has been Saved");
     var school = $('#results-college').text();
     var ethnicity = $('#results-ethnicity').text();
     var year = $('#results-year').text();
@@ -32,9 +33,10 @@ var AddSearchSave = function(school, ethnicity, year, programGrads, ethnicityGra
 }
 
 function removeSearch(){
-  $("#remove-search").on('click',function(event){
+  $(".remove-search").on('click',function(event){
     event.preventDefault();
-    var id = $('#save-id').val();
+    var id = $(this).find("#save-id").val();
+    // console.log(id)
     return $.ajax({
       url: '/api/v1/saves/' + id,
       method: 'DELETE',
@@ -42,3 +44,10 @@ function removeSearch(){
     })
   });
 };
+
+// function removeSearchListener(){
+//   $("#remove-search").on('click', function(event){
+//     event.preventDefault();
+//     removeSearch();
+//   });
+// };

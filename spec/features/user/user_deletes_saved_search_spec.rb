@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-  describe "user visits profile page" do
+  describe "user visits profile page", :type => :feature, :js => true do
 
     before(:each) do
       mock_auth_hash

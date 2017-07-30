@@ -12,7 +12,8 @@ class Api::V1::SavesController < ApplicationController
 
   def destroy
     Safe.delete(params[:id])
-    render json: 204
+    render partial: "users/remaining_saves", locals: {safe: Safe}, layout: false, status: 204
+    # byebug
   end
 
   private
