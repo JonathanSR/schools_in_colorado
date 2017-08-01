@@ -115,3 +115,4 @@ var ethnicities = function(ethnicitiesData){
     $('#ethnicity').append(new Option(ethnicity))
   };
 };
+
