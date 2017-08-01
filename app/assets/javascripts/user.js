@@ -36,11 +36,14 @@ function removeSearch(){
   $(".remove-search").on('click',function(event){
     event.preventDefault();
     var id = $(this).find("#save-id").val();
-    // console.log(id)
+    var record = ($(this).parent())
     return $.ajax({
       url: '/api/v1/saves/' + id,
       method: 'DELETE',
       data: id
+    })
+    .done(function(response){
+      record.remove()
     })
   });
 };
