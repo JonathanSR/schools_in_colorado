@@ -7,7 +7,7 @@ before_script:
   - psql -c "CREATE DATABASE travis_ci_test;" -U postgres
 script: 
   - bundle exec rake db:migrate --trace
-  = bundle exec rake db:seed
+  - bundle exec rake db:seed
   - bundle exec rake db:test:prepare
   - bundle exec rspec spec/
 deploy:
