@@ -6,7 +6,7 @@ services:
 before_script:
   - psql -c "CREATE DATABASE travis_ci_test;" -U postgres
 script: 
-  - bundle exec rake rspec-rails spec
+  - bundle exec rake 
 deploy:
   api_key:
     secure: Pfg1g/Y3uZU8VW3Gu0/EzGwSyDZGktFtZY2hVD5qWblGyiFEUug/XgMbPrVRSQfuBWyDH7/H+uTGTl3S7Lnan8pquxeUZE/bDE5XnS1lOezoPq5skASvxjio3HgdOBHYtfSA5MXYm+QCqYGktLuqzw9N34pktyiKg4CdSirWYNa1VRCXNRxj4lgANSK42exNtg9RFMXTcsQsjYg0r8OqkaVs3xS6x5Ad0z/eDvihDWXf2iRKuvFrFRKhX9HYeNLHwJlAFucmcoXl7f9fOdg8cYe5iRDMUPNdg++QoPpeMaREN+g27baWgFy30XZhYjjHXgFdLAaMdfNOGxJ1yxzTFwAr0ssYKwCwJbPPQQ8OFVHbosmN7UVGYwu3u8py/9y/1EeFcSPOX2Ko+eS8px2rAAfMq/ZU9rMm0QxTsqKDl+ERZtS+p4ssK7zt+8orzUR4jG47AX8P1ZWKQ5+qH/q1la0s+a9LuHicysQe++uut7+q1KaikoI0E6ckrPX375MeJ6gtBmiu+Jvr25/90l9cnPrew9jkDWKd8sm1ej/stDG84/qfLCgktbxRxj2Y//6IV09GdA1bJgt/VjGVIN93iNkDBgf2WWopEv3lpHYoallD345+dvTmc82cAAB7XnyR/wFkEA0UjZ9Xkb7bqqN1iih4LNroMaxo8Wlaqk254KM=
