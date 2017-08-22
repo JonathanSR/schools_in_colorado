@@ -6,5 +6,10 @@ class ResultsController <ApplicationController
     gon.institution = Institution.find_by(name:params[:college])
     @college = Institution.find_by(name:params[:college])
   end
+
+  def graduations
+    byebug
+    render json: ethnicity_graduates
+  end
 end 
 

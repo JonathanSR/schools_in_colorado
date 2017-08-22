@@ -5,7 +5,7 @@ require 'rails_helper'
       it "returns an array of ethnicity objects" do
         ethnicities = Ethnicity.get_ethnicities
         ethnicity = ethnicities[0]
-
+ 
         expect(ethnicities.class).to eq(Array)
         expect(ethnicity.ethnicity).to be_truthy
       end

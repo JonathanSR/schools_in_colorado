@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe SchoolService do
   attr_reader :service
-
+ 
   before(:each) do
     @service = SchoolService.new
   end
