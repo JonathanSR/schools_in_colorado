@@ -55,10 +55,27 @@ describe SchoolService do
 
   describe "it returns all available data" do
     it "returns all available data" do
-      VCR.use_cassette('/services/all_data') do      
+      VCR.use_cassette('/services/all_data') do
         schools = @service.get_data
         school = schools[0]
         expect(school[:institutionname]).to be_truthy
+      end
+    end
+  end
+
+  describe "last five years of data" do
+    it "returns all graduates of the school and program and queried" do
+      VCR.use_cassette('/services/last_five') do
+        graduates = @service.last_five("Colorado State University", "14")
+        graduate = graduates[0]
+
+        expect(graduates.class).to eq(Array)
+        expect(graduates.count).to eq(824)
+        expect(graduate[:institutionname]).to be_truthy
+        expect(graduate[:cip2]).to be_truthy
+        expect(graduate[:year]).to be_truthy
+        expect(graduate[:ethnicity]).to be_truthy
+        expect(graduate[:gender]).to be_truthy
       end
     end
   end
