@@ -7,7 +7,8 @@ require 'rails_helper'
         ethnicity = ethnicities[0]
 
         expect(ethnicities.class).to eq(Array)
-        expect(ethnicity.ethnicity).to be_truthy
+        expect(ethnicity.class).to eq(Ethnicity)
+        expect(ethnicity.ethnicity).to eq("White, non-Hispanic")
       end
     end
 
@@ -16,6 +17,7 @@ require 'rails_helper'
     ethnicity = ethnicities[0]
 
     expect(ethnicities.count).to eq(11)
+    expect(ethnicity.class).to eq(Ethnicity)
     expect(ethnicity.ethnicity).to eq("White, non-Hispanic")
   end
 end

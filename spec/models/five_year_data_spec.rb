@@ -1,12 +1,6 @@
 require 'rails_helper'
 
 describe FiveYear do
-  # attr_reader :service
-
-  # before(:each) do
-  #   @service = SchoolService.new
-  # end
-
     describe "set year search" do
       it "returns an array of fiveyear objects" do
         VCR.use_cassette('/models/five_year') do
