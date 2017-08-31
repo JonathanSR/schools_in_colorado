@@ -59,3 +59,10 @@
     </div>
   </div>
 </div>
+
+
+
+<%= column_chart @gender_stats%>
+
+<%= pie_chart({"Football" => 10, "Basketball" => 5}) %>
+<%= pie_chart [["Football", "dog"], ["Basketball", 5], ["Basketball", "dog"]] %>
