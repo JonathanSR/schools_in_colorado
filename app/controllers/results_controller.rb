@@ -10,7 +10,10 @@ class ResultsController <ApplicationController
 
     school = SchoolService.new
     last_five = school.last_five(params[:college], params[:program])
-    @gender_stats = Hash[last_five.group_by{|h| [h[:year], h[:gender]]}.map{|k,v| [k, v.count] }]
+    gender = Hash[last_five.group_by{|h| [h[:year], h[:gender]]}.map{|k,v| [k.join(" - "), v.count] }]
+
+    @gender_stats= gender.sort_by {|k| k}
+    #  byebug
   end
 end 
 

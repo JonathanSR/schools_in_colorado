@@ -52,6 +52,21 @@
 <div class = "container results-header">
   <div class="row">
     <div class="col s12">
+      <div class="card-panel blue-grey lighten-1" id="grad-stats-header">
+        <span> Graduation Statistics for the last five(5) years.
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class = "container charts">
+  <%= column_chart @gender_stats, xtitle: "Year & Gender", ytitle: "Total Graduates", title: "Gender Graduation Statistics"%>
+</div>
+
+<div class = "container results-header">
+  <div class="row">
+    <div class="col s12">
       <div class="card-panel">
         <span> Thank you for using our service, we hope that by providing you with up to date graduation data your search for a Colorado institution has been made easier.
         </span>
@@ -60,9 +75,3 @@
   </div>
 </div>
 
-
-
-<%= column_chart @gender_stats%>
-
-<%= pie_chart({"Football" => 10, "Basketball" => 5}) %>
-<%= pie_chart [["Football", "dog"], ["Basketball", 5], ["Basketball", "dog"]] %>
