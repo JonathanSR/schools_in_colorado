@@ -22,5 +22,8 @@ Rails.application.routes.draw do
       resources :saves, only: [:create, :destroy]
     end
   end
+
+  resources :charts, only: [:index]
+
 end  
 

@@ -1,0 +1,15 @@
+<div class = "container" id="results-header">
+  <h5 id="results-college">Graduation Statistics for the last five(5) years.</h5>
+</div>
+
+<div class = "container charts">
+  <%= column_chart @gender_stats, xtitle: "Year & Gender", ytitle: "Number of Graduates", title: "Gender Graduation Statistics", library: {backgroundColor: "transparent"}%>
+</div>
+
+<div class = "container charts">
+  <%= column_chart @ethnicity_stats, xtitle: "Year & Ethnicity", ytitle: "Number of Graduates", title: "Ethnicity Graduation Statistics", library: {backgroundColor: "transparent"}%>
+</div>
+
+<div class = "container charts">
+  <%= column_chart @age_stats, xtitle: "Year and Graduate Age Range", ytitle: "Number of Graduates", title: "Age Range Statistics", library: {backgroundColor: "transparent"}%>
+</div>
