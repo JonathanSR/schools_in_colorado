@@ -22,6 +22,7 @@
             <div class="card-action search-again">
               <a href="/search">Search Again</a>
               <a href="" id="save-search">Save Search</a>
+              <%=link_to "More Data", {:controller => 'charts', :action => 'index', :college => params[:college], :program => params[:program]}%>
             </div>
         </div>
       </div>
@@ -59,3 +60,4 @@
     </div>
   </div>
 </div>
+

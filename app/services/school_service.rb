@@ -21,6 +21,10 @@ attr_reader :connection
     parse(connection.get("?year=#{year}&institutionname=#{college}&ethnicity=#{ethnicity}"))
   end
 
+  def last_five(college, program)
+    parse(connection.get("?$where=year > 2011&institutionname=#{college}&cip2=#{program}"))
+  end
+
   def get_data
     Rails.cache.fetch("all_data") do
       parse(connection.get("https://data.colorado.gov/resource/yt5k-hawq.json"))
