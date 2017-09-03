@@ -50,18 +50,15 @@
 </div>
 
 <div class = "container results-header">
-  <div class="row">
-    <div class="col s12">
-      <div class="card-panel blue-grey lighten-1" id="grad-stats-header">
-        <span> Graduation Statistics for the last five(5) years.
-        </span>
-      </div>
-    </div>
-  </div>
+  <h5 id="results-college">Graduation Statistics for the last five(5) years.</h5>
 </div>
 
 <div class = "container charts">
-  <%= column_chart @gender_stats, xtitle: "Year & Gender", ytitle: "Total Graduates", title: "Gender Graduation Statistics"%>
+  <%= column_chart @gender_stats, xtitle: "Year & Gender", ytitle: "Number of Graduates", title: "Gender Graduation Statistics", library: {backgroundColor: "transparent"}%>
+</div>
+
+<div class = "container charts">
+  <%= bar_chart @ethnicity_stats, library: {backgroundColor: "transparent"}%>
 </div>
 
 <div class = "container results-header">
